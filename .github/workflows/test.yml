@@ -29,5 +29,5 @@ jobs:
     - name: Deploy FastAPI
       run: |
         cd src
-        uvicorn main:app --reload
+        uvicorn src.api:app --reload
         
