@@ -22,10 +22,14 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-    - name: Run test.py
+    - name: Run tests
       run: |
         cd src/tests
         python test.py
+    - name: Run etl
+      run: |
+        cd src
+        python etl.py
     - name: Train model
       run: |
         cd src
