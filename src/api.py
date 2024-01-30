@@ -2,10 +2,24 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+
 @app.get("/")
 async def read_root():
-    return {"Hello": "World"}
+    return {"This is an API for rainy weather prediction"}
 
-@app.get("/items/{item_id}")
-async def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
+
+@app.get('/predict')
+async def predict(
+        max_temp_dobowa: float,
+        min_temp_dobowa: float,
+        srednia_temp_dobowa: float,
+        min_temp_przy_gruncie: float,
+        suma_dobowa_opadow: float,
+        wysokosc_pokrywy_snieznej: float
+):
+    prediction = predict(max_temp_dobowa, min_temp_dobowa, srednia_temp_dobowa, min_temp_przy_gruncie,
+                         suma_dobowa_opadow, wysokosc_pokrywy_snieznej)
+    response = {
+        'Logistic regression prediction ': prediction
+    }
+    return response

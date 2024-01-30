@@ -30,4 +30,3 @@ jobs:
       run: |
         cd src
         uvicorn api:app --reload
-
