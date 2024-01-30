@@ -8,5 +8,4 @@ Uruchomienie:
 
 Używanie predykcji:
 * http://127.0.0.1:8000/docs#/default/predict_predict_get
-* Wpisujemy dane
-* 
+* Używamy get /predict z danymi
