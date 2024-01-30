@@ -8,10 +8,10 @@ from joblib import dump
 # Loading and checking data
 def load_and_check_data(path, encoding):
     df = pd.read_csv(path, encoding=encoding)
-    #print("Pierwsze 5 wierszy danych:")
-    #print(df.head())
-    #print("\nSprawdzenie brakujących danych:")
-    #print(df.isnull().sum())
+    print("Pierwsze 5 wierszy danych:")
+    print(df.head())
+    print("\nSprawdzenie brakujących danych:")
+    print(df.isnull().sum())
     return df
 
 # Loading datar
@@ -24,14 +24,14 @@ except UnicodeDecodeError:
 
 
 # Checking whether there is any data still missing
-#print("Brakujące dane po przygotowaniu (trening):")
-#print(train_data.isnull().sum())
-#print("Brakujące dane po przygotowaniu (test):")
-#print(test_data.isnull().sum())
+print("Brakujące dane po przygotowaniu (trening):")
+print(train_data.isnull().sum())
+print("Brakujące dane po przygotowaniu (test):")
+print(test_data.isnull().sum())
 
 # Checking data types
-#print("\nTypy danych w zbiorze treningowym:")
-#print(train_data.dtypes)
+print("\nTypy danych w zbiorze treningowym:")
+print(train_data.dtypes)
 
 # Separating variables
 X_train = train_data.drop(columns=["czy_pada"])
