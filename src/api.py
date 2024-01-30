@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import predict
 
 app = FastAPI()
 
@@ -17,7 +18,7 @@ async def predict(
         suma_dobowa_opadow: float,
         wysokosc_pokrywy_snieznej: float
 ):
-    prediction = predict(max_temp_dobowa, min_temp_dobowa, srednia_temp_dobowa, min_temp_przy_gruncie,
+    prediction = await predict(max_temp_dobowa, min_temp_dobowa, srednia_temp_dobowa, min_temp_przy_gruncie,
                          suma_dobowa_opadow, wysokosc_pokrywy_snieznej)
     response = {
         'Logistic regression prediction ': prediction
