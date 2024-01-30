@@ -9,11 +9,16 @@ raw_data_paths = ["../data/raw/2021", "../data/raw/2022"]
 # Path to the output folder
 processed_data_path = "../data/processed"
 
+
 # Column names for the CSV files
 column_names = ["kod_stacji", "nazwa_stacji", "rok", "miesiac", "dzien", "max_temp_dobowa",
                 "status_pomiaru_tmax", "min_temp_dobowa", "status_pomiaru_tmin", "srednia_temp_dobowa",
                 "status_pomiaru_std", "min_temp_przy_gruncie", "status_pomiaru_tmng", "suma_dobowa_opadow",
                 "status_pomiaru_smdb", "rodzaj_opadu", "wysokosc_pokrywy_snieznej", "status_pomiaru_pksn"]
+
+# Creating the output folder if it doesn't exist
+if not os.path.exists(processed_data_path):
+    os.makedirs(processed_data_path)
 
 # Loop through each raw data folder
 for path in raw_data_paths:
